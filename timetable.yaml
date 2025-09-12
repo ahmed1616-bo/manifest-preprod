@@ -127,7 +127,7 @@ spec:
       volumes:
         - name: timetable-data
           persistentVolumeClaim:
-            claimName: timetable-data
+            claimName: timetable-data-qa
         - name: vault-config-esprit
           configMap:
             name: vault-config-esprit
