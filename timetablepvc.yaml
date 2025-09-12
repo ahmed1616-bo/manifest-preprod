@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: timetable-data-qa
+  namespace: esprit-portail-entreprise-qa
+  labels:
+    app: portail-entreprise
+    portail-entreprise.service: timetable
+spec:
+  storageClassName: manual  
+  resources:
+    requests:
+      storage: 10Gi
+  accessModes:
+    - ReadWriteMany

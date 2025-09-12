@@ -91,6 +91,13 @@ spec:
           readOnly: true
         ports:
         - containerPort: 1923
+        resources:
+          requests:
+            memory: "512Mi"  
+            cpu: "150m"     
+          limits:
+            memory: "1024Mi"  
+            cpu: "1000m"  
         readinessProbe:
           httpGet:
             path: /api/absence/actuator/health/readiness

@@ -64,6 +64,12 @@ spec:
             value: dev
           - name: TZ
             value: "Africa/Tunis"
+          - name: MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE
+            value: "health,info,metrics,prometheus"
+          - name: MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED
+            value: "true"
+          - name: MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED
+            value: "true"
         command:
         - sh
         - -c
@@ -85,6 +91,13 @@ spec:
           readOnly: true
         ports:
         - containerPort: 1922
+        resources:
+          requests:
+            memory: "512Mi"  
+            cpu: "150m"     
+          limits:
+            memory: "1024Mi"  
+            cpu: "1000m"  
         readinessProbe:
           httpGet:
             path: /actuator/health/readiness

@@ -73,6 +73,12 @@ spec:
             value: dev
           - name: TZ
             value: "Africa/Tunis"
+          - name: MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE
+            value: "health,info,metrics,prometheus"
+          - name: MANAGEMENT_ENDPOINT_PROMETHEUS_ENABLED
+            value: "true"
+          - name: MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED
+            value: "true"
         command:
         - sh
         - -c
@@ -96,6 +102,13 @@ spec:
           name: timetable-data
         ports:
         - containerPort: 1924
+        resources:
+          requests:
+            memory: "512Mi"  
+            cpu: "150m"     
+          limits:
+            memory: "1024Mi"  
+            cpu: "1000m"  
         readinessProbe:
           httpGet:
             path: /api/edt/actuator/health/readiness
