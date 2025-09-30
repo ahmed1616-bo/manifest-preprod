@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: allow-dev-to-database
+  name: allow-qa-to-database
   namespace: esprit-portail-entreprise
 spec:
   podSelector:
