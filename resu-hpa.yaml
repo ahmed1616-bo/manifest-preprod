@@ -13,7 +13,7 @@ spec:
     name: resultat
 
   # Nombre minimum et maximum de pods
-  minReplicas: 2    
+  minReplicas: 1    
   maxReplicas: 5    
 
   # Métriques surveillées (CPU et Mémoire)
