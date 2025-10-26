@@ -26,7 +26,7 @@ metadata:
     app: portail-entreprise
     portail-entreprise.service: absence
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: portail-entreprise
