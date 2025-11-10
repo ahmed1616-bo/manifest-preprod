@@ -36,7 +36,9 @@ spec:
       labels:
         app: portail-entreprise
         portail-entreprise.service: inscription
-    spec:   
+    spec:
+      nodeSelector:
+        node-role: application-workload   
       imagePullSecrets:
         - name: harbor-creds1
       serviceAccountName: esprit-app-sa

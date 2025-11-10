@@ -38,6 +38,8 @@ spec:
         app: portail-entreprise
         portail-entreprise.service: authentication
     spec: 
+      nodeSelector:
+        node-role: application-workload
       imagePullSecrets:
         - name: harbor-creds1
       serviceAccountName: esprit-app-sa

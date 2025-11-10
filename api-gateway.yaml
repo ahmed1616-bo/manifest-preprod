@@ -38,6 +38,8 @@ spec:
         app:  portail-entreprise
         portail-entreprise.service: api-gateway
     spec: 
+      nodeSelector:
+        node-role: application-workload
       imagePullSecrets:
         - name: harbor-creds1 
       serviceAccountName: esprit-app-sa
@@ -97,7 +99,7 @@ spec:
             memory: "512Mi"  
             cpu: "150m"     
           limits:
-            memory: "1024Mi"  
+            memory: "2048Mi"  
             cpu: "1000m"  
         readinessProbe:
           httpGet:
