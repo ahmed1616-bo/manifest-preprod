@@ -98,8 +98,8 @@ spec:
             memory: "512Mi"  
             cpu: "150m"     
           limits:
-            memory: "1024Mi"  
-            cpu: "1000m"  
+            memory: "2900Mi"  
+            cpu: "1500m"  
         readinessProbe:
           httpGet:
             path: /api/planif/actuator/health/readiness
